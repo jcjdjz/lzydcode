@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="jars">
+    <CLASSES>
+      <root url="file://D:/Spark/spark-3.2.1-bin-hadoop3.2/jars" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://D:/Spark/spark-3.2.1-bin-hadoop3.2/jars" />
+    </SOURCES>
+    <jarDirectory url="file://D:/Spark/spark-3.2.1-bin-hadoop3.2/jars" recursive="false" />
+    <jarDirectory url="file://D:/Spark/spark-3.2.1-bin-hadoop3.2/jars" recursive="false" type="SOURCES" />
+  </library>
+</component>
