@@ -11,6 +11,7 @@ public class database {
     Connection connection;  //连接数据库
     public Statement statement;  //输出器
     public ResultSet rs; //结果集
+    ResultSet rs1;
     public String name;
     public String value;
     public void initmysql()
@@ -84,16 +85,20 @@ public class database {
 
         //建表
         StringBuilder createTable=new StringBuilder();
-        /*if(createTable!=null){
+       //DatabaseMetaData dbMetaData=connection.getMetaData();
+        //String[]   types   =   { "TABLE" };
+       // rs1=dbMetaData.getTables(null, null, tableName, types);
+        /*if(rs1.next()){
             statement.executeUpdate("drop table fp_result"); //删除存在的表
         }*/
-        createTable.append("create table "+tableName+"(");
-        createTable.append("`产品名称`"+"varchar(255) not null,");
-        createTable.append("value int not null);");
-        //statement.executeUpdate(createTable.toString());
-
-        //导入数据
-        StringBuilder insertQuery=new StringBuilder();
+        //else {
+            createTable.append("create table " + tableName + "(");
+            createTable.append("`产品名称`" + "varchar(255) not null,");
+            createTable.append("value int not null);");
+            //statement.executeUpdate(createTable.toString());
+        //}
+            //导入数据
+            StringBuilder insertQuery = new StringBuilder();
         /*if(insertQuery!=null) {
             StringBuilder insertQuery1=new StringBuilder("truncate fp_result");//如果有内容先删掉
             statement.executeUpdate(insertQuery1.toString());
@@ -129,4 +134,5 @@ public class database {
         insertQuery.append(");");
         statement.executeUpdate(insertQuery.toString());
     }
+
 }

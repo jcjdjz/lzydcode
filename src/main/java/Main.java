@@ -7,14 +7,9 @@ import org.apache.spark.mllib.fpm.AssociationRules;
 import org.apache.spark.mllib.fpm.FPGrowth;
 import org.apache.spark.mllib.fpm.FPGrowthModel;
 
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
-import java.awt.*;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Vector;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
@@ -46,6 +41,7 @@ public class Main {
             String javaitem=itemset.javaItems().toString();
             String freq="'"+itemset.freq()+"'";
             //da.paste(javaitem,freq);
+            //dt.addRow();
         }
 
         for(AssociationRules.Rule<String> rule:model.generateAssociationRules(0.5).toJavaRDD().collect()) {
@@ -56,6 +52,9 @@ public class Main {
         }
         sc.close();
 
+        rs_table rs=new rs_table();
+        //rs.show();
+        //rs.show1();
         draw.run();
         piechart piechart=new piechart();
         piechart.run();

@@ -125,7 +125,7 @@ public class draw {
     public void run()
     {
         JFrame frame = new JFrame("Java数据统计图"); //窗口名称
-        frame.setBounds(150, 50, 1200, 600);  //窗口边界信息
+        frame.setBounds(600, 50, 1200, 600);  //窗口边界信息
         frame.add(new draw().getChartPanel()); //加载信息
         frame.setVisible(true); //显示
     }

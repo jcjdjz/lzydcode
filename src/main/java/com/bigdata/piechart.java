@@ -79,7 +79,7 @@ public class piechart {
     public void run()
     {
         JFrame frame=new JFrame("饼状图");
-        frame.setBounds(150,10,1000,1000);
+        frame.setBounds(600,10,1000,1000);
         frame.add(frame1);
         frame.setVisible(true);
     }
